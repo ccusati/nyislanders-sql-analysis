@@ -1,10 +1,6 @@
 """
 Pull NY Islanders (NYI) roster + player stats from the free, public NHL API
-and save them as clean CSV files you can import into DB Browser for SQLite.
 
-No API key needed. Just run:  python get_islanders_data.py
-
-Requires the 'requests' package:  pip install requests
 """
 
 import requests
@@ -12,9 +8,9 @@ import csv
 
 TEAM = "NYI"
 
-# Two seasons of data — current season + last season, so you can do
-# year-over-year comparisons (e.g. "who improved, who declined").
+# Two seasons of data — current season + last season
 SEASONS = {
+    "2023-24": "20232024",  # stats from 2 seasons ago
     "current": "now",        # this season's stats
     "2024-25": "20242025",   # last full season
 }
@@ -105,8 +101,3 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Couldn't pull {label} stats: {e}")
 
-    print("\nDone. You should now have:")
-    print(" - islanders_roster.csv")
-    print(" - islanders_stats_current.csv")
-    print(" - islanders_stats_2024-25.csv")
-    print("\nImport these into DB Browser for SQLite as separate tables to get started.")
