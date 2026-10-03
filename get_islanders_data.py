@@ -10,7 +10,10 @@ TEAM = "NYI"
 
 # Two seasons of data — current season + last season
 SEASONS = {
+<<<<<<< HEAD
     "2023-24": "20232024",  # stats from 2 seasons ago
+=======
+>>>>>>> dbd86dcd84e045d0007a042842372ad13b282c00
     "current": "now",        # this season's stats
     "2024-25": "20242025",   # last full season
 }
@@ -100,4 +103,3 @@ if __name__ == "__main__":
             save_stats(label, season_code)
         except Exception as e:
             print(f"Couldn't pull {label} stats: {e}")
-
